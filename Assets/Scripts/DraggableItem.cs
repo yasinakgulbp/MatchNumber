@@ -6,8 +6,10 @@ using UnityEngine.UI;
 
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    public int value; // Item deðeri
     public Image image;
     [HideInInspector] public Transform parentAfterDrag;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("Begin drag");
@@ -28,6 +30,5 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         Debug.Log("End drag");
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
-
     }
 }
