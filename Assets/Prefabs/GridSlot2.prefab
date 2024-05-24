@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2898685740564245906}
   - component: {fileID: 1649280460820799728}
   - component: {fileID: 2124340968716764251}
+  - component: {fileID: 6975913853477617981}
   m_Layer: 5
   m_Name: GridSlot2
   m_TagString: Untagged
@@ -97,7 +98,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 60, y: 60}
+  m_CellSize: {x: 160, y: 160}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -113,5 +114,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92e1f3e26dc73a4b8cfae40443b861c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab32: {fileID: 3571831605748643007, guid: 69e9ff8bfe145954689aa8f27b5f8b56, type: 3}
-  itemPrefab64: {fileID: 3684598636372684897, guid: 4075b210a83140941a150ea3c45b8fdb, type: 3}
+--- !u!114 &6975913853477617981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3075363479598322766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45049f7d3c45a14439c02d1ccf2fb81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

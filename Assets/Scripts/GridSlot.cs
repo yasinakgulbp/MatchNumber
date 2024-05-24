@@ -6,11 +6,13 @@ using UnityEngine.EventSystems;
 public class GridSlot : MonoBehaviour, IDropHandler
 {
     private PrefabManager prefabManager;
+    private GridController gridController;
     private ScoreManager scoreManager;
 
     void Start()
     {
         prefabManager = FindObjectOfType<PrefabManager>();
+        gridController = FindObjectOfType<GridController>();
         scoreManager = FindObjectOfType<ScoreManager>();
     }
 
@@ -31,7 +33,7 @@ public class GridSlot : MonoBehaviour, IDropHandler
             if (droppedItem.value == existingItem.value)
             {
                 int newValue = droppedItem.value * 2;
-                scoreManager.AddScore(newValue); // Skor ekleme
+                scoreManager.AddScore(newValue);
 
                 Destroy(dropped);
                 Destroy(existingItem.gameObject);
@@ -46,6 +48,9 @@ public class GridSlot : MonoBehaviour, IDropHandler
                 {
                     Debug.LogError("Prefab not found for value: " + newValue);
                 }
+
+                gridController.CheckAndUpdateMaxTileValue(newValue);
+                droppedItem.Merge();
             }
         }
     }

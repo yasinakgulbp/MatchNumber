@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class PrefabManager : MonoBehaviour
 {
+    public GameObject itemPrefab2;
+    public GameObject itemPrefab4;
+    public GameObject itemPrefab8;
     public GameObject itemPrefab16;
     public GameObject itemPrefab32;
     public GameObject itemPrefab64;
@@ -23,6 +26,9 @@ public class PrefabManager : MonoBehaviour
     {
         prefabDictionary = new Dictionary<int, GameObject>
         {
+            { 2, itemPrefab2 },
+            { 4, itemPrefab4 },
+            { 8, itemPrefab8 },
             { 16, itemPrefab16 },
             { 32, itemPrefab32 },
             { 64, itemPrefab64 },

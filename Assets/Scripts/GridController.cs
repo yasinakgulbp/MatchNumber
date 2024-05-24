@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GridController : MonoBehaviour
 {
+    public TextMeshProUGUI maxTileText;
     private List<Transform> gridSlots;
+    private int maxTileValue = 16;
 
     void Start()
     {
@@ -12,6 +15,7 @@ public class GridController : MonoBehaviour
         {
             gridSlots.Add(slot);
         }
+        UpdateMaxTileText();
     }
 
     public List<Transform> GetEmptySlots()
@@ -27,5 +31,24 @@ public class GridController : MonoBehaviour
         }
 
         return emptySlots;
+    }
+
+    public int GetMaxTileValue()
+    {
+        return maxTileValue;
+    }
+
+    public void CheckAndUpdateMaxTileValue(int newValue)
+    {
+        if (newValue > maxTileValue)
+        {
+            maxTileValue = newValue;
+            UpdateMaxTileText();
+        }
+    }
+
+    private void UpdateMaxTileText()
+    {
+        maxTileText.text = maxTileValue.ToString();
     }
 }
