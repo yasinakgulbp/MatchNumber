@@ -12,10 +12,21 @@ public class SpawnManager : MonoBehaviour
 
     void Start()
     {
+        InitializeComponents();
+        StartCoroutine(SpawnRoutine());
+    }
+
+    private void InitializeComponents()
+    {
         prefabManager = FindObjectOfType<PrefabManager>();
         gridController = FindObjectOfType<GridController>();
         gameManager = FindObjectOfType<GameManager>();
-        StartCoroutine(SpawnRoutine());
+
+        if (prefabManager == null || gridController == null || gameManager == null)
+        {
+            Debug.LogError("SpawnManager: One or more components are not initialized.");
+            isGameOver = true;
+        }
     }
 
     private IEnumerator SpawnRoutine()

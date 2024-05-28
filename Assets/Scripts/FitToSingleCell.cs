@@ -13,7 +13,7 @@ public class FitToSingleCell : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         // FitCellSize fonksiyonunu 0.1 saniye gecikmeli olarak çaðýr
         FitCellSize();
-        Invoke("FitCellSize", 0.012f);
+        Invoke("FitCellSize", 0.02f);
         //InvokeRepeating("FirCellSize", 3, 1);
     }
 
